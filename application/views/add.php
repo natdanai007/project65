@@ -1,12 +1,14 @@
+<?php echo $this->session->flashdata('success_msg'); ?>
+<?php echo $this->session->flashdata('error_msg'); ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
 <head>
     <meta charset="UTF-8">
-    <link href="<?php echo base_url();?>CSS/form_spregister.css" rel="stylesheet" >
     <title>หน้าผู้ให้บริการ</title>
 </head>
 <link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo base_url();?>CSS/add.css" rel="stylesheet" >
 <main>
 
 <body>
@@ -21,8 +23,7 @@
         <center>
             <img id="pic7" src="<?php echo base_url(); ?>img/33.png"style="margin-top:100px;">
         </center>
-        <form  action="form_validationsp" role="form" method="post" enctype="multipart/form-data">
-
+        <form role="form" method="post" enctype="multipart/form-data">
             <h1>กรอกข้อมูลสมัครงาน</h1>
 
             <div class="row mt-4">
@@ -42,6 +43,9 @@
                         <input placeholder="เลขบัตรประชาชน" type="text" name="id" id="id">
                         <font color="red"><?php echo form_error('name'); ?></font>
                     </div><br>
+                    <label for="card"></label>
+                    <input placeholder="สำเนาบัตร" type="file" name="card" id="card" accept="image/*">
+                    <font color="red"><?php echo form_error('card'); ?></font>
                 </div><br>
                 <div>
                     <label for="name"></label>
@@ -122,7 +126,7 @@
                     <center>
                         <br>
                         <input id="btnsp" type="submit" class="btn btn-warning"
-                        name="userspSubmit" value="สมัครงาน"></input>
+                        name="userSubmit" value="สมัครงาน"></input>
                         <br>
                         <br>
                     </center>

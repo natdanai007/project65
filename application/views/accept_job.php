@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD:application/views/accept_job.php
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -94,6 +95,13 @@ table{
 </style>
 </head>
 <body >
+=======
+  <head>
+    <link href="<?php echo base_url();?>CSS/form_selectsp.css" rel="stylesheet" >
+  </head>
+  <body style= "background:#F5F5F5;">
+ 
+>>>>>>> N:application/views/form_selectsp.php
 <div class="navbar">
 <a href ="#">
 <img id="pic1" src="<?php echo base_url(); ?>img/2.png">

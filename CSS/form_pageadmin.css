@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+
    @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
   body{
         font-family: 'Prompt', sans-serif;
@@ -84,40 +78,4 @@ width: 986px;
 height: 500px;
 margin-top:250px;
 margin-left:450px;
-
-
 }
-</style>
-</head>
-<body style ="background-color: #474641;">
-<img id="greenspa" src="<?php echo base_url(); ?>img/greenspa.png">
-<div class="navbar">
-<a href ="#">
-<img id="pic1" src="<?php echo base_url(); ?>img/2.png">
-</a>
-<div id ="boxlogout">
-<a id ="logout" href="splogin">ออกจากระบบ</a>
-</div>
-<div id="welcome">
-      <?php
-      if (isset($this->session->userdata['spusername'])) {
-        $sp_user = $this->session->userdata['spusername'];
-        $sp_name = $this->session->userdata['spname'];
-      }
-      ?>
-      <a href="#">สวัสดีคุณ<?php echo $sp_name; ?></a></a>
-        </div>
-        <div id ="all">
-      <a href="accept_job">การจองของลูกค้า</a>
-     
-          </div>
-
-
-
-
-
-</body>
-</html>
-=======
-<link href="<?php echo base_url();?>CSS/form_sp.css" rel="stylesheet" >
->>>>>>> N

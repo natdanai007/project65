@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 foreach ($reserve as $row) {
     $reserve_id = $row->reserve_id;
@@ -83,3 +84,6 @@ body {
 
 </body>
 </html>
+=======
+<link href="<?php echo base_url();?>CSS/pay.css" rel="stylesheet" >
+>>>>>>> N

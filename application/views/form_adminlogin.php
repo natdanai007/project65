@@ -3,71 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    .mySlides {display:none;}
-    form{
-        position: absolute;
-        left:43%;
-        top:26%;
-        
-    }
-	button{
-		border-color:transparent;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-	#img{
-		position: absolute;
-        left:41%;
-        top:8%;
-	}
-    #line{
-        border-bottom: 1px solid;
-        height: 2px;
-        width: 305px;
-        color: #253937;
-    }
-    h1{
-        width: 305px;
-        height: 60px;
-        top: 400px;
-        background: #726741;
-        border-radius: 8px;
-        text-align:center;
-        padding-top: 20px;
-        color: #ffffff;
-    }
-    input{
-        height: 30px;
-        width: 300px;
-        font-size: 20px;
-        border: 1px solid rgba(0, 0, 0, 0.35);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 4px;
-    }
-	#btnadmin{
-    border: transparent;
-    border-radius: 30px;
-    background-color: #253937;
-    color: white;
-    width: 310px;
-    height: 40px;
-    font-size: 24px;
-    }
-    #pic2{
-        margin-top:200px;
-        margin-left: -26px;
-
-    }
-    img{
-        margin-top:150px;
-        margin-left: -26px;
-    }
-    body{
-        background-color: #F4F1EC;
-    }
-
-    
-</style>
+<link href="<?php echo base_url();?>CSS/form_adminlogin.css" rel="stylesheet" >
 <center>
 <img id="pic7" src="<?php echo base_url(); ?>img/img2.png">
 </center>

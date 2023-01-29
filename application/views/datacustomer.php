@@ -3,91 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="<?php echo base_url();?>CSS/datacustomer.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-  
-    body{
-        font-family: 'Prompt', sans-serif;
-    }
-    table{
-        margin:auto;
-        margin-top:240px;
-        
-    }
-#welcome{
-  position: absolute;
-width: 275px;
-height: 90px;
-margin-left: 1490px;
-margin-top: 10px;
-color: white;
-}
-
-  .navbar {
-  position: absolute;
-  width: 1920px;
-  height: 70px;
-  left: 0px;
-  top: 0px;
-  background: #726741; 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-
-  #pic1{
-  position: absolute;
-  width: 275px;
-  height: 90px;
-  left: 35px;
-  top: -8px;
-  }
-
-#all{
-  position: absolute;
-  margin-left: 280px;
-  margin-top: 10px;
-}
-#logout{
-position: absolute;
-width: 100px;
-height: 19px;
-margin-left: -12px;
-margin-top: -4px;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 19px;
-/* identical to box height */
-color: #726741;
-}
-#boxlogout{
-box-sizing: border-box;
-position: absolute;
-width: 110px;
-height: 41px;
-margin-left: 1750px;
-top: 15px;
-
-background: #FFFFFF;
-border: 1px solid rgba(0, 0, 0, 0.25);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 5px;
-}
-</style>
 </head>
 <body style ="background-color: #474641;">
 <div class="navbar">

@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="<?php echo base_url();?>CSS/show_output.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css"&gt;
 <title></title>
 <style>

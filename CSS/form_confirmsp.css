@@ -1,0 +1,33 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+    form{
+        position: absolute;
+        left:43%;
+        top:55%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        font-family: 'Prompt', sans-serif;
+        font-size: 20px;
+    }
+ 
+    body{
+        font-family: 'Prompt', sans-serif;
+        
+      
+    }
+    #img{
+		position: absolute;
+        left:40%;
+        top:3%;
+	}
+    table{
+        margin:auto;
+        margin-top:240px;
+        
+    }
+    #logout{
+        position: absolute;
+		top:3%;
+        left:95%;
+      
+	}
+
