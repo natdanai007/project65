@@ -101,7 +101,7 @@
 <center>
 <img id="pic7" src="<?php echo base_url(); ?>img/img2.png">
 </center>
-<form style="background-color:transparent" method="post" action="sp">
+<form style="background-color:transparent" method="post" action="form_splogin">
 
 <div id="pic2">
 	

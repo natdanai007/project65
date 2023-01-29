@@ -10,12 +10,11 @@ class m_system extends CI_Model{
         $st_email=$data['email'];
         $st_account=$data['account'];
         $st_bank=$data['bank'];
-        $st_manage=$data['manage'];
-        $sql = "insert into system value('$st_name','$st_address','$st_tel','$st_email','$st_account','$st_bank','$sp_manage')";
+        $sql = "insert into system value('$st_name','$st_address','$st_tel','$st_email','$st_account','$st_bank')";
         $qr = $this->db->query($sql);
         return true;
         }
-     public function all(){
+     public function select(){
         $sql = "select * from system";
         $qr = $this->db->query($sql);
         return $qr->result();
@@ -37,9 +36,8 @@ class m_system extends CI_Model{
         $st_email=$data['email'];
         $st_account=$data['account'];
         $st_bank=$data['bank'];
-        $st_manage=$data['manage'];
         $sql = "update system set st_tel='$st_tel',
-        st_address='$st_address' ,st_email='$st_email',st_account='$st_account',st_bank='$st_bank',st_manage='$st_manage'
+        st_address='$st_address' ,st_email='$st_email',st_account='$st_account',st_bank='$st_bank'
         where st_name='$st_name'";
         $qr = $this->db->query($sql);
         return true;

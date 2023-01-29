@@ -485,9 +485,9 @@ border-radius: 5px;
 
 <div id = "welcome">
   <?php 
-            if(isset($this->session->userdata['username'])){
-            $cus_user = $this->session->userdata['username'];
-            $cus_name = $this->session->userdata['name'];
+            if(isset($this->session->userdata['cususername'])){
+            $cus_user = $this->session->userdata['cususername'];
+            $cus_name = $this->session->userdata['cusname'];
             }
             ?>
             <a href="#">สวัสดีคุณ<?php echo $cus_name;?></a></a> 

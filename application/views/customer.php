@@ -6,24 +6,17 @@ foreach ($reserve as $row) {
     $reserve_datetime = $row->reserve_datetime;
     $reserve_address = $row->reserve_address;
     $reserve_price = $row->reserve_price;
+    $reserve_status = $row->reserve_status;
     $cus_name = $row->cus_name;
     $cus_tel= $row->cus_tel;
     $sp_name= $row->sp_name;
+    $sp_tel= $row->cus_tel;
+
+
 
 }
 ?>
 
-<?php
-foreach ($system as $row) {
-    $st_name = $row->st_name;
-    $st_address = $row->st_address;
-    $st_tel = $row->st_tel ;
-    $st_email = $row->st_email;
-    $st_account = $row->st_account;
-    $st_bank = $row->st_bank;
-   
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +43,7 @@ body {
   
 
 <main id = "data">
+    
   <p>ชื่อ-นามสกุล:<?php echo $cus_name;?>
   <p>เบอร์โทร:<?php echo $cus_tel;?>
   <p>รหัสจองคิว:<?php echo $reserve_id;  ?>
@@ -58,28 +52,10 @@ body {
   <p>วันที่และเวลา:<?php echo $reserve_datetime;?>
   <p>ตำแหน่งที่อยู่:<?php echo $reserve_address;?>
   <p>ผู้ให้บริการ:<?php echo $sp_name;?>
-  <p>ราคา:<?php echo $reserve_price;?>
+  <p>ราคา:<?php echo $reserve_status;?>
   </main>
 
 
-<form action="form_confrimpay" method="post" style="background-color:transparent">
-        <div id="paymentinput">
-            <p>เลขที่บัญชี :<input  type="text"  value="<?php echo $st_account;  ?>"  readonly ></input></p><br><br>
-            <p >ธนาคาร : <input  type="text" value="<?php echo $st_bank;  ?>"  readonly ></input></p>
-           <br><br>
-            <p >ชื่อบัญชี : <input  type="text"    value="<?php echo $st_name;  ?>" readonly ></input></p>
-           <br><br>
-            <p ><span style="color:red">* </span>สลิปโอนเงิน :</p>
-            <input id="slip" type="file" name="slip" accept="image/png, image/gif, image/jpeg" required />
-
-            <input type="hidden" name="reserveid" value="<?php echo $reserve_id;  ?>"><br><br>
-
-        </div>
-
-<button type="submit" style="background-color:transparent;color:black;">ชำระเงิน</button>
-<br><a href='reserve_delete?reserve_id=<?php echo $reserve_id; ?> ' onclick="return confirm('ต้องการยกเลิกการจองหรือไม่?')">ยกเลิก</a>
-
-</form>
 
 </body>
 </html>

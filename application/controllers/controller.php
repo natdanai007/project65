@@ -15,8 +15,10 @@ class controller extends CI_Controller
         $this->load->model('m_register'); //
         $this->load->model('m_spregister'); //
         $this->load->model('m_sp'); //
+        $this->load->model('m_accept'); //
         $this->load->model('m_system'); //
         $this->load->model('m_reserve');
+        $this->load->model('m_pay');
         $this->load->model('usersp');
     }
 
@@ -52,8 +54,8 @@ class controller extends CI_Controller
                 foreach ($data as $row) {
                     $userdata = array(
 
-                        'username' => $row->ad_user,
-                        'name' => $row->ad_name
+                        'adiminusername' => $row->ad_user,
+                        'adiminname' => $row->ad_name
                     );
                     $this->session->set_userdata($userdata);
                 }
@@ -91,8 +93,8 @@ class controller extends CI_Controller
                 foreach ($data as $row) {
                     $userdata = array(
                         'cusid' => $row->cus_id,
-                        'username' => $row->cus_user,
-                        'name' => $row->cus_name
+                        'cususername' => $row->cus_user,
+                        'cusname' => $row->cus_name
                     );
                     $this->session->set_userdata($userdata);
                 }
@@ -113,7 +115,7 @@ class controller extends CI_Controller
     {
         $this->load->view('form_splogin');
     }
-    public function sppage()
+    public function form_splogin()
     {
         $this->form_validation->set_rules('username', 'username', 'required');
         $this->form_validation->set_rules('password', 'password', 'required');
@@ -124,15 +126,18 @@ class controller extends CI_Controller
             $get_data['password'] = $_REQUEST['password'];
             //$this->load->view('msg_login',$data);
             //**/
-            $data = $this->m_splogin->login($get_data);
+            $data = $this->m_splogin->splogin($get_data);
             if ($data) { //ตรวจสอบว่าพบข้อมูล username password
                 foreach ($data as $row) {
                     $userdata = array(
-                        'username' => $row->sp_user,
-                        'name' => $row->sp_name
+                        'spid' => $row->sp_id,
+                        'spusername' => $row->sp_user,
+                        'spname' => $row->sp_name
                     );
+                    $this->session->set_userdata($userdata);
                 }
-                $this->load->view('form_sppage');
+                $this->load->view('form_sp');
+                //$this->load->view('form_sp');
             } else { //ไม่พบข้อมูลใน database
                 $data['error'] = "username or password incorrect";
                 $this->load->view('form_splogin', $data);
@@ -643,7 +648,6 @@ class controller extends CI_Controller
         $this->form_validation->set_rules('email', 'email', 'required');
         $this->form_validation->set_rules('account', 'account', 'required');
         $this->form_validation->set_rules('bank', 'bank', 'required');
-        $this->form_validation->set_rules('manage', 'manage', 'required');
         $this->form_validation->set_message('required', '{field} is required');
 
         if ($this->form_validation->run() == FALSE) {
@@ -655,7 +659,6 @@ class controller extends CI_Controller
             $data['email'] = $_REQUEST['email'];
             $data['account'] = $_REQUEST['account'];
             $data['bank'] = $_REQUEST['bank'];
-            $data['manage'] = $_REQUEST['manage'];
             $this->m_system->insert($data);
             $data['system'] = $this->m_system->all();
             $this->load->view('form_tablesystem', $data);
@@ -677,7 +680,6 @@ class controller extends CI_Controller
         $data['email'] = $_REQUEST['email'];
         $data['account'] = $_REQUEST['account'];
         $data['bank'] = $_REQUEST['bank'];
-        $data['manage'] = $_REQUEST['manage'];
         $this->m_system->insert($data);
         $data['system'] = $this->m_system->all();
         $this->load->view('form_tablesystem', $data);
@@ -697,27 +699,13 @@ class controller extends CI_Controller
         $data['email'] = $_REQUEST['email'];
         $data['account'] = $_REQUEST['account'];
         $data['bank'] = $_REQUEST['bank'];
-        $data['manage'] = $_REQUEST['manage'];
         $this->m_system->update($data);
         $data['system'] = $this->m_system->all();
         $this->load->view('form_tablesystem', $data);
     }
 
-    public function form_reserve()
-    {
-        $data['id'] = $_REQUEST['id'];
-        $data['svname'] = $_REQUEST['svname'];
-        $data['period'] = $_REQUEST['period'];
-        $data['datetime'] = $_REQUEST['datetime'];
-        $data['address'] = $_REQUEST['address'];
-        $data['total'] = $_REQUEST['total'];
-        $data['cusid'] = $_REQUEST['cusid'];
-        $data['spid'] = $_REQUEST['spid'];
-        $this->m_reserve->insert($data);
-        $data['reserve'] = $this->m_reserve->select();
-      
-        $this->load->view('ConfirmReserve', $data);
-    }
+    
+    
     public function form_map()
     { 
         $data = array();
@@ -728,10 +716,69 @@ class controller extends CI_Controller
     {
         $this->load->view('pay');
     }
+    
+    //ชำระเงิน
+    public function form_pay()
+    {
+        $data['id'] = $_REQUEST['id'];
+        $data['svname'] = $_REQUEST['svname'];
+        $data['period'] = $_REQUEST['period'];
+        $data['datetime'] = $_REQUEST['datetime'];
+        $data['address'] = $_REQUEST['address'];
+        $data['total'] = $_REQUEST['total'];
+        $data['status'] = 'ยังไม่ชำระเงิน';
+        $data['cusid'] = $_REQUEST['cusid'];
+        $data['spid'] = $_REQUEST['spid'];
+        $this->m_reserve->insert($data);
+        $data['reserve'] = $this->m_reserve->select();
+        $data['system'] = $this->m_system->select();
+        $this->load->view('pay', $data);
+    }
 
+    public function form_confrimpay(){
+        date_default_timezone_set("Asia/Bangkok");
+        $data['id'] = "";
+        $data['slip'] = $_REQUEST['slip'];
+        $data['datetime'] = date('Y-m-d H:i:s');
+        $data['status'] = 'ชำระเงินแล้ว';
+        $data['reserveid'] = $_REQUEST['reserveid'];
 
-    public function sp(){
-      
+        $this->m_pay->insert($data);
+        $data['pay'] = $this->m_pay->select();
+        $this->load->view('customer',$data);
+        $data['id'] = $_REQUEST['reserveid'];
+        $update = $this->m_reserve->update($data);
+    }
+    public function reserve_delete()
+    {
+        $reserve_id = $_REQUEST['reserve_id'];
+        $this->m_reserve->delete($reserve_id);
+        $data['reserve'] = $this->m_reserve->select();
+        $this->load->view('form_homepage', $data);
+    }
+
+    public function form_sp()
+    {
+       
         $this->load->view('form_sp');
     }
+
+    public function accept_job()
+{
+    $getses = $this->session->userdata();
+    $getdata =$getses['username'];
+    $id['spid'] = $getdata;
+    $data['reserve'] = $this->m_accept->select($id);
+
+    $this->load->view('accept_job', $data);
 }
+
+public function customer()
+    {
+        $data['reserve'] = $this->m_reserve->select();
+        $this->load->view('customer', $data);
+    }
+}
+
+
+

@@ -6,7 +6,6 @@ foreach($system as $row){
     $st_email=$row->st_email;
     $st_account=$row->st_account;
     $st_bank=$row->st_bank;
-    $st_manage=$row->st_manage;
 }
 ?>
 <!DOCTYPE html>
@@ -96,11 +95,6 @@ foreach($system as $row){
 <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
 <option value="ธนาคารกรุงศรีอยุธยา">ธนาคารกรุงศรีอยุธยา</option></select>
 </div><br>
-<div>
-<label for="manage">เปอร์เซ็นต์จัดการรายได้:</label>
-<input type="int" name="manage" id="manage" value="<?php echo $st_manage; ?>">
-</div><br>
-<div>
 <br>
 <button type="submit style="background-color:transparent;color:black;">แก้ไขข้อมูล</button> 
 <button type="reset"  >รีเซ็ต</button>

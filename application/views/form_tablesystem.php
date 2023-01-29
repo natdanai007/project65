@@ -84,7 +84,6 @@
     <th>อีเมลล์</th>
     <th>เลขบัญชีธนาคาร</th>
     <th>ชื่อบัญชีธนาคาร</th>
-    <th>เปอร์เซ็นต์จัดการรายได้</th>
     <th>จัดการ</th>
     
     
@@ -102,7 +101,6 @@ foreach($system as $row){
     <td><?php echo $row->st_email; ?></td>
     <td><?php echo $row->st_account; ?></td>
     <td><?php echo $row->st_bank; ?></td>
-    <td><?php echo $row->st_manage; ?></td>
  
    
     <td>

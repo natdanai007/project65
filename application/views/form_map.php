@@ -326,11 +326,8 @@ body {
   font-weight: 700;
   font-size: 40px;
   line-height: 47px;
-
   text-align: center;
-
   color: #F4F1EC;
-
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -458,16 +455,13 @@ body {
   color: #F4F1EC;
 }
 #BoxNext {
-  position: absolute;
   width: 401px;
   height: 50px;
-  left: 759px;
-  top: 3800px;
+  margin-left:35%;
   color:white;
   font-size:25px;
   background: #253937;
-  mix-blend-mode: darken;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
   border-radius: 8px;
 }
 
@@ -661,54 +655,43 @@ nav {
     display: inline-block;
     width:235px ;
     height: 380px;
-    margin-top:1500px
+    margin-top:30px
 }
 .card {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     width: 230px;
-    
-    
     background-color: #F0F0F0;
     text-align: center;
     border: #cacaca solid 1px;
-    
-    
-    
-    
-    
-    
   }
+
   .img{
     width: 100%;
     height: 200px;
-    margin: auto;
-    
+    margin: auto; 
     background-color: #FFFFFF;
     border-bottom: #cacaca solid 1px;
-    
-    
   }
   .head{
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 5px;
   }
   .price {
     color: #2e94f3;
-    font-size: 22px;
+    font-size: 15px;
+    height:100px;
   }
   .detail{
     font-size: 16px;
   }
   
   #addBt{
-    border: transparent;
-    
-    padding: 10px;
     color: white;
     background-color: #F69A56;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 10%;
+    margin-top:20px;
     font-size: 18px;
     
     
@@ -738,7 +721,15 @@ nav {
   
   
 }
+.selectsp{
+  font-size: 30px;
+  background: #726741;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: #F4F1EC;
+  padding-left: 30px;
 
+}
 #num::-webkit-inner-spin-button, 
 #num::-webkit-outer-spin-button {
   opacity: 1;
@@ -748,17 +739,19 @@ nav {
 
 <body style="background:#F5F5F5;">
   <div class="navbar">
-    <img id="pic1" src="<?php echo base_url(); ?>img/2.png">
+  <a href ="form_homepage">
+<img id="pic1" src="<?php echo base_url(); ?>img/2.png">
+</a>
     <div id="boxlogout">
       <a id="logout" href="login">ออกจากระบบ</a>
     </div>
 
     <div id="welcome">
       <?php
-      if (isset($this->session->userdata['username'])) {
+      if (isset($this->session->userdata['cususername'])) {
         $cus_id = $this->session->userdata['cusid'];
-        $cus_user = $this->session->userdata['username'];
-        $cus_name = $this->session->userdata['name'];
+        $cus_user = $this->session->userdata['cususername'];
+        $cus_name = $this->session->userdata['cusname'];
       }
       ?>
       <a href="#">สวัสดีคุณ<?php echo $cus_name; ?></a></a>
@@ -769,7 +762,7 @@ nav {
     </div>
     <p id="SelectService">เลือกบริการนวดสำหรับคุณ</p>
     <!--The div elements for the map and message -->
-    <form action="form_reserve" method="post" style="background-color:transparent">
+    <form action="form_pay" method="post" style="background-color:transparent">
       <br>
       <br><br><br>
       <input type="hidden" name="id">
@@ -833,7 +826,7 @@ nav {
     <img id="PicTime4" src="<?php echo base_url(); ?>img/future.png">
     <p id="TextTime4">180นาที</p>
     <label class="radio4">เลือก
-      <input type="radio" name="period" price="250" value="180นาที">
+    <input type="radio" name="period" price="250" value="180นาที">
     </label>
     </input>
     </img>
@@ -1006,26 +999,37 @@ $('#catlist :checkbox').change(calcAndShowTotal).change();
 
     
     
-   
+   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  <br> <br> <br> <br>
+   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
     <div id="container">
-   
+   <div>
+
+   </div>
 
    <div id="list">
        <?php
        $item = 1;
        foreach ($service_provider as $row) {
+       
        ?>
+
+
            <div class="cardGap">
 
                <div class="card">
                    <div class="img">
                        <img src="<?php echo base_url('img');?>/<?php echo $row['sp_picture'] ?>" alt="ไม่มีรูฟภาพ" style="width:98%;height:98%;margin-top:2px; line-height: 200px;">
                    </div>
-
-                   <p class="head"><?php echo $row['sp_name'] ?></p>
+                  
+                   ชื่อ<p class="head"><?php echo $row['sp_name'] ?></p>
+                   <p>ความถนัด</p>
                    <p class="price"><?php echo $row['sp_aptitude'] ?></p>
-                   <input type="radio" id="addBt" name="spid" value="<?php echo $row['sp_id'] ?>">เลือก</input></a>
-
+                   <label class="selectsp" >เลือก
+                   <input type="radio" id="addBt" name="spid" value="<?php echo $row['sp_id'] ?>"></input>
+                    </lable>
                </div>
            </div>
            
@@ -1035,11 +1039,14 @@ $('#catlist :checkbox').change(calcAndShowTotal).change();
 
        ?>
    </div>
+   <br><br><br><br>
+   <button id="BoxNext" type="submit" >ชำระเงิน</button>
+   <br><br><br><br><br><br><br><br>
 </div>
 
 </div>
+
     </div>
-    <button id="BoxNext" type="submit" >ถัดไป</button>
     </Form>
 
 </body>

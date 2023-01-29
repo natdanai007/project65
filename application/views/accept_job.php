@@ -86,10 +86,14 @@ margin-left:450px;
 
 
 }
+table{
+        margin:auto;
+        margin-top:240px;
+        
+    }
 </style>
 </head>
-<body style ="background-color: #474641;">
-<img id="greenspa" src="<?php echo base_url(); ?>img/greenspa.png">
+<body >
 <div class="navbar">
 <a href ="#">
 <img id="pic1" src="<?php echo base_url(); ?>img/2.png">
@@ -112,7 +116,59 @@ margin-left:450px;
           </div>
 
 
+          <main >
+    
+    <table class="table table-blue" style="width:100%">
+    <tr>
+        <th>รหัสจองคิว</th>
+        <th>ชื่อบริการ</th>
+        <th>ระยะเวลา</th>
+        <th>วันที่/เวลา</th>
+        <th>ที่อยู่</th>
+        <th>ชื่อลูกค้า</th>
+        <th>เบอร์โทร</th>
+        <th>ชื่อผู้ให้บริการ</th>
 
+        <th>จัดการ</th>
+        
+    </tr>
+    <?php
+foreach ($reserve as $row) {
+    $reserve_id = $row->reserve_id;
+    $reserve_svname = $row->reserve_svname;
+    $reserve_period = $row->reserve_period;
+    $reserve_datetime = $row->reserve_datetime;
+    $reserve_address = $row->reserve_address;
+    $cus_name = $row->cus_name;
+    $cus_tel= $row->cus_tel;
+    $sp_name= $row->sp_name;
+}
+?>        
+    <tr>
+        <td><?php echo $row->reserve_id; ?></td>
+        <td><?php echo $row->reserve_svname ; ?></td>
+        <td><?php echo $row->reserve_period; ?></td>
+        <td><?php echo $row->reserve_datetime; ?></td>
+        <td><?php echo $row->reserve_address; ?></td>
+        <td><?php echo $row->cus_name; ?></td>
+        <td><?php echo $row->cus_tel; ?></td>
+
+        <td><?php echo $row->sp_name; ?></td>
+
+        <td>
+    
+        <a href='sp_edit?sp_id=<?php echo $row->sp_id; ?>'>[รับงาน]</a>
+        <br><a href='sp_delete?sp_id=<?php echo $row->sp_id; ?> ' onclick="return confirm('ต้องการลบข้อมูลหรือไม่?')">[ลบ]</a>
+        
+        </td>
+        </tr>
+      
+    </table>
+    <div id = logout>
+    <b><a href="pageadmin" ' onclick="return confirm('ต้องกลับไปยังหน้าหลัก?')">กลับ</b>
+    </div>
+    
+    </main>
 
 
 </body>

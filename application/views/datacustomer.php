@@ -99,9 +99,9 @@ border-radius: 5px;
 </div>
 <div id = "welcome">
   <?php 
-            if(isset($this->session->userdata['username'])){
-            $ad_user = $this->session->userdata['username'];
-            $ad_name = $this->session->userdata['name'];
+            if(isset($this->session->userdata['adminusername'])){
+            $ad_user = $this->session->userdata['adminusername'];
+            $ad_name = $this->session->userdata['adminname'];
             }
             ?>
             <a href="#">สวัสดีคุณ<?php echo $ad_name;?></a> 
