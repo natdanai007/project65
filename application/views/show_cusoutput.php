@@ -4,32 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="<?php echo base_url();?>CSS/show_cusoutput.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css"&gt;
 <title></title>
-<style>
-    .mySlides {display:none;}
-    @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-    form{
-        position: absolute;
-        left:43%;
-        top:55%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        font-family: 'Prompt', sans-serif;
-        font-size: 20px;
-    }
-    button{
-		border-color:transparent;
-      
-    }
-
-	#text{
-		position: absolute;
-        left:41.5%;
-        top:25%;
-        font-size: 20px;
-	}
-
-</style>
 </head>
 <body>
     <main>

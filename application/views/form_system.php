@@ -15,48 +15,7 @@ foreach($system as $row){
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css">
-<style>
-    
-    form{
-        position: absolute;
-        left:43%;
-        top:16%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-	button{
-		border-color:transparent;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    .navbar {
-  position: absolute;
-  width: 1920px;
-  height: 70px;
-  left: 0px;
-  top: 0px;
-  background: #726741;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-
-  #pic1{
-  position: absolute;
-  width: 275px;
-  height: 90px;
-  left: 35px;
-  top: -8px;
-  }
-
-
-</style>
+<link href="<?php echo base_url();?>CSS/form_system.css" rel="stylesheet" >
 <title></title>
 </head>
 

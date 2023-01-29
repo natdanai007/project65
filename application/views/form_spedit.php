@@ -20,6 +20,7 @@ foreach ($service_provider as $row) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css">
+    <link href="<?php echo base_url();?>CSS/form_spedit.css" rel="stylesheet" >
     <style>
         form {
             position: absolute;

@@ -1,0 +1,1 @@
+<link href="<?php echo base_url();?>CSS/pay.css" rel="stylesheet" >

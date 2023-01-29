@@ -5,20 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css">
-<style>
-     .mySlides {display:none;}
-    form{
-        position: absolute;
-        left:43%;
-        top:26%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-	button{
-		border-color:transparent;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-	
-</style>
+<link href="<?php echo base_url();?>CSS/form_customer.css" rel="stylesheet" >
 <title>หน้าเข้าสู่ระบบ</title>
 </head>
 <main>
