@@ -14,7 +14,7 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a id="welcome">
                         <span class="icon">
                             <ion-icon name="logo-apple"></ion-icon>
                         </span>
@@ -23,7 +23,7 @@
                 </li>
 
                 <li>
-                    <a href="form_tablesystem">
+                    <a href="dbhome">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -88,51 +88,58 @@
             </div>
             <!-- ================ Order Details List ================= -->
             <div class="details">
-             <div class="recentOrders">
+                <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>ข้อมูลลูกค้า</h2>
+                        <h2>ข้อมูลระบบ</h2>
                     </div>
-                    <div class="cardHeaderend">
-                    <?php
-                        foreach($customer as $row){  ?>
-                    <td>
-                        <a class="btn1" href='cus_edit?cus_id=<?php echo $row->cus_id; ?>'>แก้ไข</a>
+                    
+                   <div class="cardHeaderend">
+                   <?php
+                        foreach($system as $row){
+                         ?>
+                        <tr>
+                        <td>
+                        <a  class="btn1" href='st_edit?st_name=<?php echo $row->st_name; ?>'>แก้ไข</a>
                         </td>
                         <td>
-                        <a  class="btn1" href='cus_delete?cus_id=<?php echo $row->cus_id; ?> ' onclick="return confirm('ต้องการลบข้อมูลหรือไม่?')">ลบ</a>
+                        <a  class="btn1" href='st_delete?st_name=<?php echo $row->st_name; ?> ' onclick="return confirm('ต้องการลบข้อมูลหรือไม่?')">ลบ</a>
                         </td>
-                        <?php
+                         </tr>
+                         
+                    <?php
                 }
                    ?>
-                        </div>
+                    </div>
                     <table>
                         <thead>
-                        
                             <tr>
-                                <td>เลขบัตรประชาชน</td>
-                                <td>ชื่อ-สกุล</td>
+                                <td>ชื่อระบบ</td>
+                                <td>ที่อยู่</td>
                                 <td>เบอร์โทร</td>
                                 <td>อีเมล์</td>
-                                <td>ที่อยู่</td>
-                                <td>ชื่อผู้ใช้</td>
-                                <th><a href='insert'>[เพิ่มผู้ดูแลระบบ]</a></th>
+                                <td>ชื่อบัญชีธนาคาร</td>
+                                <td>เลขบัญชีธนาคาร</td>
+                                <td>เปอร์เซ็นการจัดการรายได้</td>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <?php
-                              foreach($customer as $row){  ?>
-                            <tr>
-                              <td><?php echo $row->cus_id; ?></td>
-                              <td><?php echo $row->cus_name; ?></td>
-                              <td><?php echo $row->cus_tel; ?></td>
-                              <td><?php echo $row->cus_email; ?></td>
-                              <td><?php echo $row->cus_address; ?></td>
-                              <td><?php echo $row->cus_user; ?></td>
-                       </tr>
-                           <?php
-                        }
-                      ?>
+                    <?php
+                        foreach($system as $row){
+                         ?>
+                        <tr>
+                         <td><?php echo $row->st_name; ?></td>
+                         <td><?php echo $row->st_address; ?></td>
+                         <td><?php echo $row->st_tel; ?></td>
+                         <td><?php echo $row->st_email; ?></td>
+                         <td><?php echo $row->st_account; ?></td>
+                         <td><?php echo $row->st_bank; ?></td>
+                         <td><?php echo $row->st_manage; ?></td>
+                         </tr>
+                         
+                    <?php
+                }
+                   ?>
                         </tbody>
                     </table>
                 </div>
@@ -141,7 +148,8 @@
                 <!-- ====== ionicons ======= -->
                 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+                
+</form>
 </body>
 
 </html>

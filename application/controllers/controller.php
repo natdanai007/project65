@@ -27,7 +27,11 @@ class controller extends CI_Controller
         //Form for adding user data
         $this->load->view('add');
     }
-
+    public function dbhome()
+    {
+        $data['system'] = $this->m_system->all();
+        $this->load->view('dbhome', $data);
+    }
     public function pagelogin()
     {
         $this->load->view('pagelogin');

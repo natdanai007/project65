@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="<?php echo base_url();?>CSS/form_adminlogin.css" rel="stylesheet" >
+<link href="<?php echo base_url(); ?>CSS/form_adminlogin.css" rel="stylesheet">
 <center>
 <img id="pic7" src="<?php echo base_url(); ?>img/img2.png">
 </center>
@@ -11,7 +11,6 @@
 </head>
 <main>
     <body>
-	
 </div>
 <script>
 
